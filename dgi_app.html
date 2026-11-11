@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DGI Connect — نموذج التطبيق</title>
+<style>
+:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:#dfe9f7;color:#14285f;font-family:"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.5}
+#app{max-width:480px;margin:0 auto;min-height:100vh;background:#fff;position:relative;padding-bottom:84px;box-shadow:0 0 30px #1d4ed822}
+.hd{position:relative;background:linear-gradient(180deg,#2a5fd8,#4e8eee 55%,#a9cdf5);color:#fff;text-align:center;padding:16px 18px 86px;overflow:hidden}
+.hd:after{content:"";position:absolute;left:-12%;right:-12%;bottom:-52px;height:100px;background:#fff;border-radius:50% 50% 0 0;border-top:6px solid #fbbf24;transform:rotate(-2deg)}
+.top{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:2}
+.flag{width:56px;height:56px;border-radius:50%;background:linear-gradient(90deg,#0a7d3b 50%,#fff 50%);display:grid;place-items:center;color:#d4202c;font-size:30px;border:3px solid #fff}
+.bell{position:relative;background:none;padding:0;font-size:34px;line-height:1}.bell b{position:absolute;top:0;right:2px;min-width:16px;height:16px;border-radius:99px;background:#ef4444;font-size:10px;display:grid;place-items:center;color:#fff}
+.hd h1{margin:2px 0 0;font-size:26px;position:relative;z-index:1;text-shadow:0 2px 6px #0004}
+.hd h1 em{display:block;font-style:normal;font-size:46px;font-weight:900;direction:ltr;line-height:1.15}.hd h1 em i{font-style:normal;color:#fcd34d}
+.sw{width:170px;height:7px;border-radius:50%;background:#fcd34d;margin:0 auto;transform:rotate(-3deg)}
+.hd p{margin:12px 0 0;font-size:19px;font-weight:700;position:relative;z-index:1;text-shadow:0 2px 5px #0005}
+.bld{position:absolute;left:0;bottom:40px;opacity:.95;width:46%;height:auto;z-index:0}
+.who{display:flex;align-items:center;gap:16px;padding:0 20px;margin-top:-34px;position:relative;z-index:3}
+.who>div:first-child{flex:1;line-height:1.35}.who small{font-size:19px;font-weight:800;display:block}.who b{font-size:26px;font-weight:900;display:block}.who span{font-size:15px;font-weight:700}
+.av{width:92px;height:92px;border-radius:50%;background:#e8f0fd;border:4px solid #fff;box-shadow:0 4px 10px #1d4ed833;display:grid;place-items:center;font-size:52px}
+.st{margin:14px 18px;border-radius:20px;padding:14px 16px;display:flex;align-items:center;gap:14px;border:2px solid}
+.st .ck{width:60px;height:60px;border-radius:50%;color:#fff;display:grid;place-items:center;font-size:34px;flex:none;box-shadow:0 4px 8px #0003}
+.st div:last-child{flex:1;text-align:center;font-weight:900;font-size:22px;line-height:1.3}.st small{display:block;font-size:15px;font-weight:700;color:#2d3d52}
+.s-g{background:linear-gradient(#e4f9dc,#bdeea5);border-color:#a6e08e;color:#1d5b17}.s-g .ck{background:#18a34a}
+.s-o{background:linear-gradient(#fff3d1,#fde3a0);border-color:#f1d08a;color:#9a5b00}.s-o .ck{background:#e08a00}
+.s-r{background:linear-gradient(#ffe4e4,#f9bcbc);border-color:#f0a0a0;color:#a11b1b}.s-r .ck{background:#dc2626}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;padding:0 18px}
+.tile{background:#f4f7ff;border:1.5px solid #d7e1f5;border-radius:18px;padding:12px 4px;min-height:108px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:13.5px;font-weight:800;color:#14285f;line-height:1.25;box-shadow:0 3px 8px #1d4ed81c;text-align:center}
+.tile i{font-style:normal;font-size:34px;line-height:1.2}
+.ai{display:block;position:relative;margin:30px 14px 0;width:calc(100% - 28px);height:112px;border-radius:22px;background:linear-gradient(100deg,#1d46c4,#2d6ae8);color:#fff;padding:14px 18px;text-align:right;overflow:visible}
+.ai b{display:block;color:#fcd34d;font-size:22px;font-weight:900}.ai .r2{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:17px;font-weight:700}
+.ai u{width:36px;height:36px;border-radius:50%;background:#fcd34d;color:#1e3a8a;display:grid;place-items:center;text-decoration:none;font-size:20px}.ai svg{position:absolute;left:6px;top:-26px;width:130px}
+.feat{display:grid;grid-template-columns:repeat(5,1fr);margin:22px 8px 0;text-align:center;font-size:10.5px;font-weight:800;line-height:1.3}.feat div{padding:0 2px;border-left:1.5px solid #c3d0e8}.feat div:last-child{border:0}.feat i{display:block;font-style:normal;font-size:28px}
+.slg{margin:14px 18px 0;border-radius:18px;background:linear-gradient(95deg,#fcd34d,#f4b400);text-align:center;font-weight:900;font-size:21px;line-height:1.4;padding:12px;color:#13265c}
+.note{font-size:11px;color:#6a7aa0;text-align:center;margin:14px 18px}
+.bar{background:linear-gradient(#1e3a8a,#2457cf);color:#fff;padding:16px 16px 22px;display:flex;direction:ltr;gap:16px;align-items:center;font-weight:800;font-size:19px}.bar button{background:none;color:#fff;padding:0;font-size:26px;line-height:1}
+.sheet{background:#fff;border-radius:22px 22px 0 0;margin-top:-12px;padding:18px 16px;position:relative;min-height:70vh}
+.card,.rc{border:1.5px solid #dbe4f5;border-radius:16px;padding:14px;margin-top:14px;background:#fff;box-shadow:0 3px 8px #1d4ed814}
+.rc p{margin:9px 0;font-size:15px;font-weight:700}.ok{width:44px;height:44px;border-radius:50%;background:#16a34a;color:#fff;display:inline-grid;place-items:center;font-size:26px}
+input,select{width:100%;padding:13px;border:1.5px solid #d0dbf0;border-radius:12px;background:#f8faff;color:#14285f;font:inherit;font-size:15px;margin-bottom:12px}
+button{font:inherit;cursor:pointer;border:0;border-radius:14px;padding:13px;background:linear-gradient(#2a63e6,#1d4ed8);color:#fff;font-weight:800;font-size:17px;box-shadow:0 4px 8px #1d4ed844}
+button.w{width:100%}button.sec{background:#eef2fb;color:#2457cf;box-shadow:none;border:1.5px solid #d0dbf0}button.sm{padding:5px 10px;font-size:13px}
+.tabs{display:flex;gap:8px;margin-bottom:12px}.tabs button{flex:1;font-size:14px;padding:10px 2px;background:#eef2fb;color:#2457cf;box-shadow:none}.tabs .on{background:#fff;border:2px solid #2457cf;border-bottom-width:4px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.it{padding:10px 0;border-bottom:1px solid #e4eaf6}.it:last-child{border:0}
+.tag{font-size:12px;border-radius:99px;padding:2px 9px;font-weight:800}.t-g{background:#dcfce7;color:#16a34a}.t-o{background:#fef3c7;color:#b45309}.t-r{background:#fee2e2;color:#dc2626}
+.mu{color:#667;font-size:13px;font-weight:600}.big{text-align:center;font-size:64px;line-height:1.2;position:relative}.tc{text-align:center;font-size:19px;font-weight:800;margin:8px 0 14px}
+.pr{display:flex;align-items:center;gap:12px;padding:13px 4px;border-bottom:1px solid #e4eaf6;font-size:16px;font-weight:700;cursor:pointer}.pr input{display:none}
+.rd{width:22px;height:22px;border-radius:50%;border:2px solid #cbd5e8;flex:none}.rd.on{border:7px solid #2457cf}
+.al{border-radius:14px;padding:13px;margin-bottom:10px;display:flex;gap:12px;align-items:center;line-height:1.5;font-weight:700;border:1px solid}
+.msg{padding:10px 13px;border-radius:14px;margin:6px 0;max-width:88%;font-weight:600}.me{background:#2457cf;color:#fff;margin-inline-start:auto}.bt{background:#eef2fb;border:1px solid #d0dbf0}
+nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e3e9f6;padding-bottom:env(safe-area-inset-bottom,0px);box-shadow:0 -4px 12px #1d4ed814;z-index:9}
+nav div{display:flex;max-width:480px;margin:auto}nav button{flex:1;background:none;color:#445;border-radius:0;padding:8px 2px;font-size:13px;box-shadow:none}nav button.on{color:#1d4ed8}nav span{display:block;font-size:24px;line-height:1.2}
+.noprint{}@media print{nav,.noprint,.bar{display:none!important}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+const $=s=>document.querySelector(s);
+const D=n=>{const d=new Date();d.setDate(d.getDate()+n);return d.toISOString().slice(0,10)};
+const F=s=>s.split('-').reverse().join('/');
+const dl=s=>Math.ceil((new Date(s)-new Date(D(0)))/864e5);
+const fmt=n=>Number(n).toLocaleString('en-US')+' دج';
+let S=null,tab='home',sub='',it='rc',inq=0,q='',pt='card';
+let chat=[{a:1,t:'مرحباً! اسألني عن الإجراءات والوثائق والآجال. أنا مساعد استرشادي ولا أتخذ قرارات رسمية.'}];
+try{S=JSON.parse(localStorage.getItem('dgiapp')||'null')}catch(e){}
+const save=()=>{try{localStorage.setItem('dgiapp',JSON.stringify(S))}catch(e){}};
+const go=(t,s)=>{tab=t;sub=s||'';render();window.scrollTo(0,0)};
+const lvl=o=>{if(o.paid)return'g';const k=dl(o.d);return k<0?'r':k<=7?'o':'g'};
+const over=()=>{const l=S.ob.map(lvl);return l.includes('r')?'r':l.includes('o')?'o':'g'};
+const alr=()=>S.ob.filter(o=>!o.paid&&dl(o.d)<=15).sort((a,b)=>a.k=='fine'?1:-1);
+const TXT={g:['وضعيتك الجبائية سليمة','لا توجد التزامات معلقة حالياً'],o:['إجراء مطلوب','توجد مهلة قريبة تحتاج إلى متابعة'],r:['التزام يحتاج إلى تسوية','يوجد التزام متأخر حسب البيانات المدخلة']};
+const IC={g:'✓',o:'!',r:'✕'};
+const BLD='<svg class="bld" viewBox="0 0 233 150"><g fill="#e6eefb"><rect x="0" y="95" width="60" height="55"/><rect x="85" y="20" width="75" height="130"/><rect x="165" y="55" width="68" height="95"/></g><g fill="#6f8fc7" opacity=".75">'+Array.from({length:30},(_,i)=>`<rect x="${92+(i%5)*13}" y="${30+Math.floor(i/5)*18}" width="8" height="11"/>`).join('')+'</g><rect x="0" y="140" width="233" height="10" fill="#4c7b45"/></svg>';
+const ROB='<svg viewBox="0 0 190 180"><circle cx="85" cy="64" r="52" fill="#fff"/><rect x="42" y="38" width="86" height="50" rx="25" fill="#10265f"/><circle cx="68" cy="63" r="9" fill="#38bdf8"/><circle cx="103" cy="63" r="9" fill="#38bdf8"/><circle cx="30" cy="62" r="12" fill="#e8eefb"/><circle cx="140" cy="62" r="12" fill="#e8eefb"/><rect x="80" y="2" width="9" height="16" fill="#fff"/><circle cx="85" cy="3" r="6" fill="#fcd34d"/><rect x="50" y="108" width="70" height="66" rx="30" fill="#fff"/><circle cx="85" cy="134" r="8" fill="#38bdf8"/></svg>';
+const SH='<svg width="92" height="76" viewBox="0 0 92 76"><g transform="rotate(-12 40 40)"><rect x="4" y="10" width="76" height="50" rx="8" fill="#2a4fd0"/><rect x="4" y="22" width="76" height="9" fill="#12308f"/><rect x="12" y="40" width="22" height="9" rx="3" fill="#f5d56b"/></g><path d="M66 18l22 8v18c0 14-10 24-22 28-12-4-22-14-22-28V26z" fill="#18a34a" stroke="#fff" stroke-width="3"/><path d="M55 44l8 8 14-16" fill="none" stroke="#fff" stroke-width="5"/></svg>';
+const HEAD=(b)=>`<div class="hd"><div class="top"><div class="flag">☪</div>${b||''}</div>${BLD}<h1>المنصة الضريبية الذكية<em>DGI <i>Connect</i></em></h1><div class="sw"></div><p>معك في كل وقت .. بكل سهولة</p></div>`;
+function login(){$('#app').innerHTML=HEAD()+`<div class="sheet" style="margin-top:-30px"><h3 style="margin:0 0 12px">إنشاء حساب</h3><input id="nm" placeholder="الاسم الكامل" value="أحمد محمد"><input id="rc" inputmode="numeric" placeholder="رقم السجل التجاري" value="123456789"><input type="password" placeholder="كلمة المرور (تجريبية)" value="demo"><button class="w" onclick="reg()">دخول</button><p class="note">نموذج تجريبي: البيانات تُحفظ على جهازك فقط ولا يوجد ربط رسمي. المنصة مستقلة وغير رسمية.</p></div>`}
+function reg(){const n=$('#nm').value.trim(),r=$('#rc').value.trim();if(!n||!r)return alert('أدخل الاسم ورقم السجل');
+S={u:n,rc:r,log:['إنشاء الحساب'],ob:[{id:1,n:'التصريح الضريبي G50',d:D(12),a:0,paid:0,k:'decl'},{id:2,n:'غرامة مستحقة',d:D(14),a:15000,paid:0,k:'fine'},{id:3,n:'الدفع الجزافي الوحيد',d:D(60),a:45000,paid:0},{id:4,n:'الرسم على النشاط المهني',d:D(-20),a:22000,paid:1}],
+docs:[{id:1,n:'إيصال دفع الضريبة',t:'إيصال',d:D(-26)},{id:2,n:'تصريح G50 السابق',t:'تصريح',d:D(-35)}],
+req:[{n:'طلب شهادة جبائية',s:'قيد المعالجة',d:D(-3)},{n:'طلب كشف الوضعية',s:'مكتمل',d:D(-12)}]};save();go('home')}
+function render(){if(!S)return login();
+const v=tab=='home'?home():({req,set,more})[tab]();
+$('#app').innerHTML=v+`<nav class="noprint"><div>${[['home','🏠','الرئيسية'],['req','📋','الطلبات'],['set','⚙️','الإعدادات'],['more','⋯','المزيد']].map(x=>`<button class="${tab==x[0]&&!sub?'on':''}" onclick="go('${x[0]}')"><span>${x[1]}</span>${x[2]}</button>`).join('')}</div></nav>`}
+const bar=(t,b)=>`<div class="bar"><button onclick="go('${tab}')">←</button><span>${t}</span></div><div class="sheet">${b}</div>`;
+function badge(o){const l=lvl(o),k=dl(o.d);return`<span class="tag t-${l}">${o.paid?'مسدَّد':k<0?'متأخر '+(-k)+' يوم':'بعد '+k+' يوم'}</span>`}
+function home(){if(sub)return subs[sub]();const l=over(),n=alr().length;
+const T=[['🔍','الاستعلام عن الوضعية الجبائية','inq'],['📄','الملف الجبائي ومتابعة الالتزامات','obl'],['🗂️','خزنة الوثائق والإيصالات','vlt'],['💳','الدفع الإلكتروني بأمان','pay'],['🔔','التنبيهات والتذكيرات','alr'],['🧮','حساب تقديري للضرائب','est']];
+const FT=[['🔒','أمان عالٍ<br>وحماية بياناتك'],['🎧','مساعدة ذكية<br>بالذكاء الاصطناعي'],['⏱️','تنبيه قبل<br>الآجال'],['☁️','خزنة رقمية<br>للوثائق'],['📊','متابعة دقيقة<br>ولحظية']];
+return HEAD(`<button class="bell" onclick="go('home','alr')">🔔${n?`<b>${n}</b>`:''}</button>`)+`<div class="who"><div><small>مرحباً بك</small><b>${S.u}</b><span>رقم السجل التجاري : ${S.rc}</span></div><div class="av">👤</div></div>
+<div class="st s-${l}"><div class="ck">${IC[l]}</div><div>${TXT[l][0]}<small>${TXT[l][1]}</small></div></div>
+<div class="grid">${T.map(x=>`<button class="tile" onclick="go('home','${x[2]}')" style="box-shadow:0 3px 8px #1d4ed81c;background:#f4f7ff;color:#14285f"><i>${x[0]}</i>${x[1]}</button>`).join('')}</div>
+<button class="ai" onclick="go('home','bot')"><b>المساعد الضريبي الذكي</b><div class="r2"><u>→</u>اسأل .. وسنجيبك فوراً</div>${ROB}</button>
+<div class="feat">${FT.map(f=>`<div><i>${f[0]}</i>${f[1]}</div>`).join('')}</div><div class="slg">حل رقمي متكامل<br>لإدارة التزاماتك الضريبية</div>
+<p class="note">معلومات استرشادية مبنية على بيانات المستخدم وليست نتيجة رسمية. منصة مستقلة غير رسمية.</p>`}
+const subs={
+inq(){const l=over();return bar('الاستعلام عن الوضعية',`<div class="tabs"><button class="${it=='rc'?'on':''}" onclick="it='rc';inq=0;render()">رقم السجل التجاري</button><button class="${it=='id'?'on':''}" onclick="it='id';inq=0;render()">رقم التعريف الوطني</button></div>
+<input placeholder="${it=='rc'?'أدخل رقم السجل التجاري':'أدخل رقم التعريف الوطني'}" value="${S.rc}"><button class="w" onclick="inq=1;S.log.push('استعلام');save();render()">🔍 بحث</button>
+${inq?`<div class="rc"><div class="row"><b style="font-size:18px">نتيجة الاستعلام</b><span class="ok" style="background:${l=='g'?'#16a34a':l=='o'?'#e08a00':'#dc2626'}">${IC[l]}</span></div><p>الوضعية : <span style="color:${l=='g'?'#16a34a':l=='o'?'#e08a00':'#dc2626'}">${l=='g'?'سليمة':l=='o'?'إجراء مطلوب':'تحتاج تسوية'}</span></p><p>الضرائب المستحقة : <span style="color:#dc2626">${S.ob.filter(o=>!o.paid&&dl(o.d)<0).reduce((s,o)=>s+o.a,0)}</span> دج</p><p>آخر تحديث : ${F(D(0))}</p><button class="w sec" onclick="go('home','obl')">📄 عرض التفاصيل</button></div>`:''}
+<p class="note">نتيجة استرشادية من بيانات النموذج. الاستعلام الرسمي يتطلب ربطاً وترخيصاً.</p>`)},
+pay(){const o=S.ob.filter(x=>!x.paid);return bar('الدفع الإلكتروني',`<div class="big">${SH}</div><div class="tc">ادفع ضرائبك وغراماتك<br>بأمان وسهولة</div>
+${o.length?`<select id="po">${o.map(x=>`<option value="${x.id}">${x.n}${x.a?' — '+fmt(x.a):''}</option>`).join('')}</select><div style="font-weight:800;margin-bottom:4px">اختر نوع الدفع :</div><div style="border:1.5px solid #dbe4f5;border-radius:14px;padding:0 10px">${[['card','بطاقة بنكية','💳'],['post','بريد الجزائر','✉️'],['mob','الدفع عبر الهاتف','📱']].map(r=>`<div class="pr" onclick="pt='${r[0]}';render()"><i class="rd ${pt==r[0]?'on':''}"></i><span style="font-size:24px">${r[2]}</span>${r[1]}</div>`).join('')}</div><button class="w" style="margin-top:16px" onclick="payGo()">🔒 متابعة الدفع</button>`:'<p class="tc">لا توجد التزامات غير مسددة 🎉</p>'}
+<p class="note">محاكاة فقط: الدفع الفعلي يتطلب ربطاً رسمياً ومزود دفع مرخصاً.</p>`)},
+obl(){return bar('الملف الجبائي والالتزامات',[...S.ob].sort((a,b)=>a.paid-b.paid||new Date(a.d)-new Date(b.d)).map(o=>`<div class="it"><div class="row"><b>${o.n}</b>${badge(o)}</div><div class="mu">${F(o.d)}${o.a?' · '+fmt(o.a):''}</div></div>`).join('')+`<div class="card"><b>إضافة التزام</b><input id="on" placeholder="اسم الالتزام" style="margin-top:8px"><input id="od" type="date"><input id="oa" type="number" placeholder="المبلغ التقديري (اختياري)"><button class="w" onclick="addO()">إضافة</button></div><button class="w sec noprint" style="margin-top:12px" onclick="go('home','rep')">📄 إنشاء تقرير جبائي</button>`)},
+vlt(){const L=S.docs.filter(d=>(d.n+d.t).includes(q));return bar('خزنة الوثائق والإيصالات',`<input placeholder="🔍 بحث في الوثائق" value="${q}" oninput="q=this.value;render();const e=$('input');e.focus();e.setSelectionRange(q.length,q.length)">${L.map(d=>`<div class="it row"><div>📄 ${d.n}<div class="mu">${d.t} · ${F(d.d)}</div></div><button class="sm sec" onclick="delD(${d.id})">حذف</button></div>`).join('')||'<p class="mu">لا توجد وثائق.</p>'}<div class="card"><b>إضافة وثيقة</b><input id="dn" placeholder="اسم الوثيقة" style="margin-top:8px"><select id="dt"><option>إيصال</option><option>تصريح</option><option>طلب</option><option>أخرى</option></select><button class="w" onclick="addD()">حفظ</button><p class="mu">يحفظ النموذج بيانات الوثيقة فقط، ورفع الملفات في النسخة التالية.</p></div>`)},
+est(){return bar('حساب تقديري للضرائب',`<input id="ca" type="number" inputmode="numeric" placeholder="رقم الأعمال السنوي (دج)"><select id="ty"><option value="5">إنتاج وبيع (IFU 5%)</option><option value="12">خدمات (IFU 12%)</option><option value="19">رسم على القيمة المضافة (19%)</option></select><button class="w" onclick="estGo()">احسب</button><div id="er"></div><p class="note">حساب تقديري غير رسمي بنسب مبسطة. راجع الإدارة الجبائية للمبلغ الدقيق.</p>`)},
+alr(){const A=alr();return bar('تنبيهات وتذكيرات',`<div class="big">🔔${A.length?`<b style="position:absolute;top:2px;left:50%;margin-left:14px;background:#ef4444;color:#fff;border-radius:50%;width:30px;height:30px;font-size:17px;display:grid;place-items:center">${A.length}</b>`:''}</div><div class="tc">${A.length?'لديك '+(A.length==2?'تنبيهان':A.length+' تنبيهات')+' مهمان'.replace('مهمان',A.length==2?'مهمان':'مهمة'):'لا توجد تنبيهات'}</div>
+${A.map(o=>o.k=='fine'?`<div class="al" style="background:#fdebc8;border-color:#f1d08a"><span style="font-size:32px">⚠️</span><div>وجود غرامة مستحقة<br>بقيمة <b>${fmt(o.a)}</b> · ${F(o.d)}</div></div>`:`<div class="al" style="background:${dl(o.d)<0?'#fdd':'#fde0e0'};border-color:#f4b5b5"><span style="font-size:32px">📅</span><div>${o.n}<br><b style="color:#c81e1e">في ${F(o.d)}</b></div></div>`).join('')}<button class="w sec" onclick="go('home','obl')">☰ عرض الكل</button>`)},
+rep(){const u=S.ob.filter(o=>!o.paid);return bar('تقارير وملفاتك',`<div class="big"><span style="display:inline-block;background:#fff;border:3px solid #2457cf;border-radius:10px;padding:14px 10px;color:#dc2626;font-weight:900;font-size:22px;box-shadow:0 4px 8px #1d4ed833">PDF</span></div><div class="tc">إنشاء تقرير جبائي شامل<br>وقابل للطباعة</div>
+<div class="rc" style="margin-top:0"><div class="row"><b>${S.u}</b><span class="mu">${F(D(0))}</span></div><div class="mu">السجل التجاري: ${S.rc}</div><div class="it">الحالة: <b>${TXT[over()][0]}</b></div><div class="it">التزامات غير مسددة: <b>${u.length}</b></div><div class="it">المبلغ التقديري: <b>${fmt(u.reduce((s,o)=>s+o.a,0))}</b></div></div>
+<button class="w noprint" style="margin-top:14px" onclick="window.print()">🖨️ إنشاء التقرير</button><div class="card"><b>وثائق محفوظة</b>${S.docs.slice(0,3).map(d=>`<div class="it row"><div>${d.n}<div class="mu">${F(d.d)}</div></div><button class="sm sec noprint" onclick="alert('تنزيل الوثيقة (محاكاة)')">⬇️</button></div>`).join('')}</div><p class="note">تقرير تقديري مبني على مدخلات المستخدم، وليس وثيقة رسمية.</p>`)},
+bot(){return bar('المساعد الضريبي الذكي',`${chat.map(m=>`<div class="msg ${m.a?'bt':'me'}">${m.t}</div>`).join('')}<div style="margin:10px 0">${['ما هو G50؟','ما الوثائق المطلوبة؟','ماذا عن الغرامات؟','هل يمكنني الدفع هنا؟'].map(s=>`<button class="sm sec" style="margin:0 0 6px 6px" onclick="ask('${s}')">${s}</button>`).join('')}</div><div class="row"><input id="qi" placeholder="اكتب سؤالك" style="margin:0" onkeydown="if(event.key=='Enter')ask(this.value)"><button onclick="ask($('#qi').value)">إرسال</button></div>`)}};
+function req(){return`<div class="bar"><span>الطلبات</span></div><div class="sheet">${S.req.map(r=>`<div class="it row"><div><b>${r.n}</b><div class="mu">${F(r.d)}</div></div><span class="tag t-${r.s=='مكتمل'?'g':'o'}">${r.s}</span></div>`).join('')}<div class="card"><b>طلب جديد</b><select id="rn" style="margin-top:8px"><option>طلب شهادة جبائية</option><option>طلب كشف الوضعية</option><option>طلب نسخة تصريح</option></select><button class="w" onclick="addR()">إرسال الطلب</button><p class="mu">تتبع تجريبي. الاستخراج الرسمي رهن الربط مع الجهة المختصة.</p></div></div>`}
+function set(){return`<div class="bar"><span>الإعدادات</span></div><div class="sheet"><input id="sn" value="${S.u}"><input id="sr" value="${S.rc}"><button class="w" onclick="S.u=$('#sn').value;S.rc=$('#sr').value;S.log.push('تعديل الملف');save();go('home')">حفظ</button><div class="card"><b>سجل العمليات</b>${S.log.slice(-6).map(x=>`<div class="mu">• ${x}</div>`).join('')}</div><button class="w sec" style="margin-top:12px" onclick="if(confirm('مسح كل البيانات؟')){S=null;try{localStorage.removeItem('dgiapp')}catch(e){}render()}">إعادة ضبط النموذج</button></div>`}
+function more(){return`<div class="bar"><span>المزيد</span></div><div class="sheet">${[['🔍','الاستعلام','inq'],['📄','تقارير وملفاتك','rep'],['🧮','حساب تقديري','est'],['🤖','المساعد الذكي','bot']].map(x=>`<button class="w sec" style="margin-bottom:8px;text-align:right" onclick="go('home','${x[2]}')">${x[0]} ${x[1]}</button>`).join('')}</div>`}
+function payGo(){const id=$('#po').value;if(confirm('محاكاة الدفع: تأكيد العملية؟')){S.ob.find(o=>o.id==id).paid=1;S.log.push('دفع (محاكاة)');save();alert('تمت محاكاة الدفع بنجاح ✓');go('home','obl')}}
+function addO(){const n=$('#on').value.trim(),d=$('#od').value;if(!n||!d)return;S.ob.push({id:Date.now(),n,d,a:+$('#oa').value||0,paid:0});S.log.push('إضافة التزام');save();render()}
+function addD(){const n=$('#dn').value.trim();if(!n)return;S.docs.unshift({id:Date.now(),n,t:$('#dt').value,d:D(0)});S.log.push('إضافة وثيقة');save();render()}
+function delD(i){S.docs=S.docs.filter(d=>d.id!=i);save();render()}
+function addR(){S.req.unshift({n:$('#rn').value,s:'قيد المعالجة',d:D(0)});S.log.push('طلب جديد');save();render()}
+function estGo(){const c=+$('#ca').value,p=+$('#ty').value;if(!c)return;$('#er').innerHTML=`<div class="rc"><div class="row"><span>القيمة التقديرية</span><b>${fmt(Math.round(c*p/100))}</b></div><div class="mu">${c.toLocaleString('en-US')} × ${p}% (غير رسمي)</div></div>`}
+const FAQ=[[['g50','تصريح'],'التصريح G50 يُودَع شهرياً في الآجال القانونية. جهّز رقم الأعمال والإيصالات وتأكد من الأجل لدى مصلحتك.'],[['ifu','جزافي'],'الدفع الجزافي الوحيد موجه للأنشطة الصغيرة وله تصريح وآجال خاصة. راجع شروط الانتساب.'],[['غرامة','تأخر'],'قد تترتب غرامات عند التأخر. لا أستطيع إلغاءها أو تعديلها، لكن أنبهك قبل الآجال.'],[['وثائق','وثيقة','ملف'],'غالباً: السجل التجاري، بطاقة التعريف الجبائي، آخر تصريح، وإيصالات الدفع. تحقق من القائمة الرسمية.'],[['دفع','تسديد'],'الدفع الفعلي مرحلة مستقبلية تتطلب ربطاً مرخصاً. النموذج الحالي يحاكيه فقط.']];
+function ask(t){t=(t||'').trim();if(!t)return;chat.push({t});const l=t.toLowerCase(),f=FAQ.find(x=>x[0].some(k=>l.includes(k)));chat.push({a:1,t:f?f[1]:'لم أفهم سؤالك تماماً. جرّب ذكر G50 أو الوثائق أو الغرامات، أو راجع الإدارة الجبائية.'});render();window.scrollTo(0,document.body.scrollHeight)}
+render();
+</script>
+</body>
+</html>
